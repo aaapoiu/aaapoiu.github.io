@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Longest Substring Without Repeating Characters | aaapoiu</title>
+<meta name="keywords" content="" />
+<meta name="description" content="problem https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Given a string s, find the length of the longest substring without repeating characters. test case &quot;&quot; &quot;a&quot; &quot;aaa&quot; &quot;aaab&quot; &quot;pwwkew&quot; &quot;abcabcbb&quot; 0 1 1 2 3 3 o(n) approach  서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다. 커서 사이의 유니크한 문자들을 관리하는 셋이 있다 오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다. 따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다  class Solution { public int lengthOfLongestSubstring(String s) { if (s == null || s.">
+<meta name="author" content="">
+<link rel="canonical" href="https://aaapoiu.github.io/post/leetcode/longest-substring-without-repeating-characters/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.65aebb33e4f0ce3d1a39e4a35c11b91eb08b582489fca0f78f9227d90ac72a52.css" integrity="sha256-Za67M&#43;Twzj0aOeSjXBG5HrCLWCSJ/KD3j5In2QrHKlI=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://aaapoiu.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://aaapoiu.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aaapoiu.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://aaapoiu.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://aaapoiu.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.1" />
+<script data-ad-client="ca-pub-3803015440615765" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta property="og:title" content="Longest Substring Without Repeating Characters" />
+<meta property="og:description" content="problem https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Given a string s, find the length of the longest substring without repeating characters. test case &quot;&quot; &quot;a&quot; &quot;aaa&quot; &quot;aaab&quot; &quot;pwwkew&quot; &quot;abcabcbb&quot; 0 1 1 2 3 3 o(n) approach  서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다. 커서 사이의 유니크한 문자들을 관리하는 셋이 있다 오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다. 따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다  class Solution { public int lengthOfLongestSubstring(String s) { if (s == null || s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aaapoiu.github.io/post/leetcode/longest-substring-without-repeating-characters/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-04T01:29:14&#43;09:00" />
+<meta property="article:modified_time" content="2021-05-04T01:29:14&#43;09:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Longest Substring Without Repeating Characters"/>
+<meta name="twitter:description" content="problem https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Given a string s, find the length of the longest substring without repeating characters. test case &quot;&quot; &quot;a&quot; &quot;aaa&quot; &quot;aaab&quot; &quot;pwwkew&quot; &quot;abcabcbb&quot; 0 1 1 2 3 3 o(n) approach  서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다. 커서 사이의 유니크한 문자들을 관리하는 셋이 있다 오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다. 따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다  class Solution { public int lengthOfLongestSubstring(String s) { if (s == null || s."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://aaapoiu.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Longest Substring Without Repeating Characters",
+      "item": "https://aaapoiu.github.io/post/leetcode/longest-substring-without-repeating-characters/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Longest Substring Without Repeating Characters",
+  "name": "Longest Substring Without Repeating Characters",
+  "description": "problem https://leetcode.com/problems/longest-substring-without-repeating-characters/\nGiven a string s, find the length of the longest substring without repeating characters. test case \u0026quot;\u0026quot; \u0026quot;a\u0026quot; \u0026quot;aaa\u0026quot; \u0026quot;aaab\u0026quot; \u0026quot;pwwkew\u0026quot; \u0026quot;abcabcbb\u0026quot; 0 1 1 2 3 3 o(n) approach  서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다. 커서 사이의 유니크한 문자들을 관리하는 셋이 있다 오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다. 따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다  class Solution { public int lengthOfLongestSubstring(String s) { if (s == null || s.",
+  "keywords": [
+    
+  ],
+  "articleBody": "problem https://leetcode.com/problems/longest-substring-without-repeating-characters/\nGiven a string s, find the length of the longest substring without repeating characters. test case \"\" \"a\" \"aaa\" \"aaab\" \"pwwkew\" \"abcabcbb\" 0 1 1 2 3 3 o(n) approach  서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다. 커서 사이의 유니크한 문자들을 관리하는 셋이 있다 오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다. 따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다  class Solution { public int lengthOfLongestSubstring(String s) { if (s == null || s.length() == 0) { return 0; } SetString exists = new HashSetString(); exists.add(s.substring(0, 1)); int i = 0; int j = 1; int maxLength = 1; while (j  s.length()) { String right = s.substring(j, j+1); if (exists.contains(right)) { while (!exists.isEmpty() \u0026\u0026 exists.contains(right)) { exists.remove(s.substring(i, i+1)); i++; } } else { exists.add(right); maxLength = Math.max(maxLength, j - i); } j++; } return maxLength; } } ",
+  "wordCount" : "150",
+  "inLanguage": "en",
+  "datePublished": "2021-05-04T01:29:14+09:00",
+  "dateModified": "2021-05-04T01:29:14+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aaapoiu.github.io/post/leetcode/longest-substring-without-repeating-characters/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "aaapoiu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aaapoiu.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://aaapoiu.github.io" accesskey="h" title="aaapoiu (Alt + H)">aaapoiu</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://aaapoiu.github.io">Home</a>&nbsp;»&nbsp;<a href="https://aaapoiu.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      Longest Substring Without Repeating Characters
+    </h1>
+    <div class="post-meta">May 4, 2021
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#problem" aria-label="problem">problem</a></li>
+                <li>
+                    <a href="#on-approach" aria-label="o(n) approach">o(n) approach</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="problem">problem<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h2>
+<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">https://leetcode.com/problems/longest-substring-without-repeating-characters/</a></p>
+<pre><code>Given a string s, find the length of the longest substring without repeating characters.
+
+test case
+&quot;&quot;
+&quot;a&quot;
+&quot;aaa&quot;
+&quot;aaab&quot;
+&quot;pwwkew&quot;
+&quot;abcabcbb&quot;
+
+0
+1
+1
+2
+3
+3
+</code></pre><h2 id="on-approach">o(n) approach<a hidden class="anchor" aria-hidden="true" href="#on-approach">#</a></h2>
+<ul>
+<li>서브스트링을 관리하는 커서가 왼쪽, 오른쪽 두 개 있다.</li>
+<li>커서 사이의 유니크한 문자들을 관리하는 셋이 있다</li>
+<li>오른쪽 커서가 움직이면서, 유니크한 문자라면 셋이 증가하고, 유니크하지 않은 문자라면, 유니크해질때까지 왼쪽 커서를 움직인다.</li>
+<li>따라서 왼쪽커서와 오른쪽커서의 사이에 있는 문자는 유니크한 문자를 가진 서브스트링임을 유지한다</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lengthOfLongestSubstring</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        
+        Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> exists <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;();</span>
+        
+        exists<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 1<span style="color:#f92672">));</span>
+        
+        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> maxLength <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+        
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>j <span style="color:#f92672">&lt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            String right <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>j<span style="color:#f92672">,</span> j<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>exists<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>right<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">while</span> <span style="color:#f92672">(!</span>exists<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span> <span style="color:#f92672">&amp;&amp;</span> exists<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>right<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+                    exists<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> i<span style="color:#f92672">+</span>1<span style="color:#f92672">));</span>
+                    i<span style="color:#f92672">++;</span>
+                <span style="color:#f92672">}</span>
+
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                exists<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>right<span style="color:#f92672">);</span>
+                maxLength <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>maxLength<span style="color:#f92672">,</span> j <span style="color:#f92672">-</span> i<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+            
+            j<span style="color:#f92672">++;</span>
+        <span style="color:#f92672">}</span>
+        
+        <span style="color:#66d9ef">return</span> maxLength<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+</div>
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://aaapoiu.github.io">aaapoiu</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
