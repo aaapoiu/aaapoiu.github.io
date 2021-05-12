@@ -141,6 +141,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Reverse Bits</h2>
+  </header>
+  <section class="entry-content">
+    <p>problem https://leetcode.com/problems/reverse-bits/
+first approach public class Solution { // you need treat n as an unsigned value  public int reverseBits(int n) { int result = 0; int one = 1; // 00...001  for (int i = 0; i &lt; 32; i&#43;&#43;) { int bit = (n &gt;&gt; i) &amp; one; result = result | (bit &lt;&lt; (32-1-i)); } return result; } } </p>
+  </section>
+  <footer class="entry-footer">May 12, 2021</footer>
+  <a class="entry-link" aria-label="post link to Reverse Bits" href="https://aaapoiu.github.io/post/leetcode/reverse-bits/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Longest Palindromic Substring</h2>
+  </header>
+  <section class="entry-content">
+    <p>problem https://leetcode.com/problems/longest-palindromic-substring/
+Given a string s, return the longest palindromic substring in s. &#34;babad&#34; &#34;cbbd&#34; &#34;a&#34; &#34;ac&#34; &#34;bab&#34; &#34;bb&#34; &#34;a&#34; &#34;a&#34; first approach  O(n^3) Time limit exceeded…  class Solution { public String longestPalindrome(String s) { if (s.length() &lt;= 1) { return s.substring(0, 1); } String longest = s.substring(0, 1); for (int i = 0; i &lt; s.length(); i&#43;&#43;) { for (int j = i&#43;1; j &lt;= s.length(); j&#43;&#43;) { String sub = s....</p>
+  </section>
+  <footer class="entry-footer">May 7, 2021</footer>
+  <a class="entry-link" aria-label="post link to Longest Palindromic Substring" href="https://aaapoiu.github.io/post/leetcode/longest-palindromic-substring/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Template</h2>
   </header>
   <section class="entry-content">
